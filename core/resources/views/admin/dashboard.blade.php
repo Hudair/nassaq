@@ -8,7 +8,7 @@ if (!empty($admin->role)) {
 }
 @endphp
 <div class="mt-2 mb-4">
-    <h2 class="text-white pb-2">Welcome back, {{Auth::guard('admin')->user()->first_name}} {{Auth::guard('admin')->user()->last_name}}!</h2>
+    <h2 class="text-white pb-2">مرحبا بعودتك، {{Auth::guard('admin')->user()->first_name}} {{Auth::guard('admin')->user()->last_name}}!</h2>
 </div>
 <div class="row">
     @if (empty($admin->role) || (!empty($permissions) && in_array('Package Management', $permissions)))
@@ -24,7 +24,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats">
                             <div class="numbers">
-                                <p class="card-category">Packages</p>
+                                <p class="card-category">الاشتراكات الفعالة</p>
                                 <h4 class="card-title">{{$default->packages()->count()}}</h4>
                             </div>
                         </div>
@@ -47,7 +47,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats">
                             <div class="numbers">
-                                <p class="card-category">Active Subscriptions</p>
+                                <p class="card-category">الاشتراكات </p>
                                 <h4 class="card-title">{{\App\Subscription::where('status', 1)->count()}}</h4>
                             </div>
                         </div>
@@ -98,7 +98,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats">
                             <div class="numbers">
-                                <p class="card-category">Products</p>
+                                <p class="card-category">منتجات رقمية</p>
                                 <h4 class="card-title">{{$default->products()->count()}}</h4>
                             </div>
                         </div>
@@ -121,7 +121,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats">
                             <div class="numbers">
-                                <p class="card-category">Product Orders</p>
+                                <p class="card-category">الطلبات</p>
                                 <h4 class="card-title">{{\App\ProductOrder::count()}}</h4>
                             </div>
                         </div>
@@ -134,52 +134,7 @@ if (!empty($admin->role)) {
     @endif
 
 
-    @if (empty($admin->role) || (!empty($permissions) && in_array('Course Management', $permissions)))
-    @if ($bex->is_course == 1)
-    <div class="col-sm-6 col-md-3">
-        <a href="{{route('admin.course.index', ['language' => $default->code])}}" class="d-block">
-            <div class="card card-stats card-success card-round">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="icon-big text-center">
-                                <i class="fas fa-video"></i>
-                            </div>
-                        </div>
-                        <div class="col-9 col-stats">
-                            <div class="numbers">
-                                <p class="card-category">Courses</p>
-                                <h4 class="card-title">{{$default->courses()->count()}}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-sm-6 col-md-3">
-        <a href="{{route('admin.course.purchaseLog')}}" class="d-block">
-            <div class="card card-stats card-dark card-round">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="icon-big text-center">
-                                <i class="fas fa-user-graduate"></i>
-                            </div>
-                        </div>
-                        <div class="col-9 col-stats">
-                            <div class="numbers">
-                                <p class="card-category">Course Enrolls</p>
-                                <h4 class="card-title">{{\App\CoursePurchase::count()}}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-    @endif
-    @endif
+   
 
 
     @if (empty($admin->role) || (!empty($permissions) && in_array('Events Management', $permissions)))
@@ -196,7 +151,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats">
                             <div class="numbers">
-                                <p class="card-category">Events</p>
+                                <p class="card-category">المواعيد</p>
                                 <h4 class="card-title">{{$default->events()->count()}}</h4>
                             </div>
                         </div>
@@ -217,7 +172,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats">
                             <div class="numbers">
-                                <p class="card-category">Event Bookings</p>
+                                <p class="card-category">المواعيد المحجوزة</p>
                                 <h4 class="card-title">{{\App\EventDetail::count()}}</h4>
                             </div>
                         </div>
@@ -290,7 +245,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats pl-1">
                             <div class="numbers">
-                                <p class="card-category">Pending Support Tickets</p>
+                                <p class="card-category">تذاكر الدعم المعلقة</p>
                                 <h4 class="card-title">{{\App\Ticket::where('status', 'pending')->count()}}</h4>
                             </div>
                         </div>
@@ -311,7 +266,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats">
                             <div class="numbers">
-                                <p class="card-category">Open Support Tickets</p>
+                                <p class="card-category">تذاكر الدعم المفتوحة</p>
                                 <h4 class="card-title">{{\App\Ticket::where('status', 'open')->count()}}</h4>
                             </div>
                         </div>
@@ -336,7 +291,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats pl-1">
                             <div class="numbers">
-                                <p class="card-category">Knowledgebase Articles</p>
+                                <p class="card-category">مقالات قاعدة المعرفة</p>
                                 <h4 class="card-title">{{$default->articles()->count()}}</h4>
                             </div>
                         </div>
@@ -360,7 +315,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats pl-1">
                             <div class="numbers">
-                                <p class="card-category">Jobs</p>
+                                <p class="card-category">الوظائف</p>
                                 <h4 class="card-title">{{$default->jobs()->count()}}</h4>
                             </div>
                         </div>
@@ -384,7 +339,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats pl-1">
                             <div class="numbers">
-                                <p class="card-category">Quote Requests</p>
+                                <p class="card-category">''طلبات سعر حديد''</p>
                                 <h4 class="card-title">{{\App\Quote::count()}}</h4>
                             </div>
                         </div>
@@ -408,7 +363,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats pl-1">
                             <div class="numbers">
-                                <p class="card-category">Subscribers</p>
+                                <p class="card-category">طلبات خاصة</p>
                                 <h4 class="card-title">{{\App\Subscriber::count()}}</h4>
                             </div>
                         </div>
@@ -457,7 +412,7 @@ if (!empty($admin->role)) {
                         </div>
                         <div class="col-9 col-stats pl-1">
                             <div class="numbers">
-                                <p class="card-category">Blogs</p>
+                                <p class="card-category">المدونة</p>
                                 <h4 class="card-title">{{$default->blogs()->count()}}</h4>
                             </div>
                         </div>
@@ -477,7 +432,7 @@ if (!empty($admin->role)) {
                     </div>
                     <div class="col-9 col-stats">
                         <div class="numbers">
-                            <p class="card-category">Projects</p>
+                            <p class="card-category">المشاريع</p>
                             <h4 class="card-title">{{$default->portfolios()->count()}}</h4>
                         </div>
                     </div>
@@ -496,7 +451,7 @@ if (!empty($admin->role)) {
                     </div>
                     <div class="col-9 col-stats">
                         <div class="numbers">
-                            <p class="card-category">Services</p>
+                            <p class="card-category">الخدمات</p>
                             <h4 class="card-title">{{$default->services()->count()}}</h4>
                         </div>
                     </div>
@@ -513,17 +468,17 @@ if (!empty($admin->role)) {
                 <div class="card">
                     <div class="card-header">
                         <div class="card-head-row">
-                            <h4 class="card-title">Recent Quotations</h4>
+                            <h4 class="card-title">الطلبات الخاصة الاخيرة</h4>
                         </div>
                         <p class="card-category">
-                            Top 10 latest quotation request
+                            اعلى 10 طلبات اسعار خاصة
                         </p>
                     </div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12">
                                 @if (count($quotes) == 0)
-                                <h3 class="text-center">NO QUOTE REQUEST FOUND</h3>
+                                <h3 class="text-center">ليس هناك طلبات بعد</h3>
                                 @else
                                 <div class="table-responsive">
                                     <table class="table table-striped mt-3">
@@ -577,10 +532,10 @@ if (!empty($admin->role)) {
                 <div class="card">
                     <div class="card-header">
                         <div class="card-head-row">
-                            <h4 class="card-title">Product Orders</h4>
+                            <h4 class="card-title">الطلبات</h4>
                         </div>
                         <p class="card-category">
-                            Top 10 latest orders
+                            اعلى 10 طلبات جديدة
                         </p>
                     </div>
                     <div class="card-body">
@@ -590,9 +545,9 @@ if (!empty($admin->role)) {
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Order</th>
-                                                <th>Total</th>
-                                                <th>Actions</th>
+                                                <th>الطلب</th>
+                                                <th>العدد</th>
+                                                <th>حدث</th>
                                             </tr>
                                         </thead>
                                         <tbody>

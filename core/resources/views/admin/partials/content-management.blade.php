@@ -65,7 +65,7 @@
 @endif">
     <a data-toggle="collapse" href="#webContents">
         <i class="la flaticon-imac"></i>
-        <p>Content Management</p>
+        <p>ادارة المحتوى</p>
         <span class="caret"></span>
     </a>
     <div class="collapse
@@ -135,7 +135,7 @@
     @endif" id="webContents">
         <ul class="nav nav-collapse">
 
-            {{-- Home Page Sections --}}
+            {{-- اقسام الصفحة الرئيسية --}}
             <li class="
             @if(request()->path() == 'admin/features') selected
             @elseif(request()->path() == 'admin/introsection') selected
@@ -165,7 +165,7 @@
             @elseif(request()->path() == 'admin/sections') selected
             @endif">
                 <a data-toggle="collapse" href="#home">
-                    <span class="sub-item">Home Page Sections</span>
+                    <span class="sub-item">اقسام الصفحة الرئيسية</span>
                     <span class="caret"></span>
                 </a>
                 <div class="collapse
@@ -204,7 +204,7 @@
                         @elseif(request()->is('admin/herosection/slider/*/edit')) selected
                         @endif">
                         <a data-toggle="collapse" href="#herosection">
-                            <span class="sub-item">Hero Section</span>
+                            <span class="sub-item">هيرو سيكشن</span>
                             <span class="caret"></span>
                         </a>
                         <div class="collapse
@@ -216,7 +216,7 @@
                         <ul class="nav nav-collapse subnav">
                             <li class="@if(request()->path() == 'admin/herosection/static') active @endif">
                                 <a href="{{route('admin.herosection.static') . '?language=' . $default->code}}">
-                                    <span class="sub-item">Static Version</span>
+                                    <span class="sub-item">النسخة الثابتة</span>
                                 </a>
                             </li>
                             <li class="
@@ -224,12 +224,12 @@
                             @elseif(request()->is('admin/herosection/slider/*/edit')) active
                             @endif">
                             <a href="{{route('admin.slider.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">Slider Version</span>
+                                <span class="sub-item">النسخة سلايدات</span>
                             </a>
                         </li>
                         <li class="@if(request()->path() == 'admin/herosection/video') active @endif">
                             <a href="{{route('admin.herosection.video') . '?language=' . $default->code}}">
-                                <span class="sub-item">Video Version</span>
+                                <span class="sub-item">نسخة الفيديو</span>
                             </a>
                         </li>
                     </ul>
@@ -240,7 +240,7 @@
                     @elseif(request()->is('admin/feature/*/edit')) active
                     @endif">
                     <a href="{{route('admin.feature.index') . '?language=' . $default->code}}">
-                        <span class="sub-item">Features</span>
+                        <span class="sub-item">الميزات</span>
                     </a>
                     </li>
 
@@ -248,7 +248,7 @@
 
                     <li class="@if(request()->path() == 'admin/introsection') active @endif">
                         <a href="{{route('admin.introsection.index') . '?language=' . $default->code}}">
-                            <span class="sub-item">Intro Section</span>
+                            <span class="sub-item">صفحة البداية</span>
                         </a>
                     </li>
                     @endif
@@ -256,7 +256,7 @@
                     @if ($bex->home_page_pagebuilder == 0)
                     <li class="@if(request()->path() == 'admin/servicesection') active @endif">
                         <a href="{{route('admin.servicesection.index') . '?language=' . $default->code}}">
-                            <span class="sub-item">Service Section</span>
+                            <span class="sub-item">قسم الخدات</span>
                         </a>
                     </li>
                     @endif
@@ -266,7 +266,7 @@
                     @elseif(request()->is('admin/approach/*/pointedit')) active
                     @endif">
                     <a href="{{route('admin.approach.index') . '?language=' . $default->code}}">
-                        <span class="sub-item">Approach Section</span>
+                        <span class="sub-item">نبذة عن</span>
                     </a>
                     </li>
                     <li class="
@@ -274,14 +274,14 @@
                     @elseif(request()->is('admin/statistics/*/edit')) active
                     @endif">
                     <a href="{{route('admin.statistics.index') . '?language=' . $default->code}}">
-                        <span class="sub-item">Statistics Section</span>
+                        <span class="sub-item">الاحصائيات</span>
                     </a>
                     </li>
 
                     @if ($bex->home_page_pagebuilder == 0)
                     <li class="@if(request()->path() == 'admin/cta') active @endif">
                         <a href="{{route('admin.cta.index') . '?language=' . $default->code}}">
-                            <span class="sub-item">Call to Action Section</span>
+                            <span class="sub-item">قسم اجراء جديد</span>
                         </a>
                     </li>
                     @endif
@@ -289,7 +289,7 @@
                     @if ($bex->home_page_pagebuilder == 0)
                     <li class="@if(request()->path() == 'admin/portfoliosection') active @endif">
                         <a href="{{route('admin.portfoliosection.index') . '?language=' . $default->code}}">
-                            <span class="sub-item">Portfolio Section</span>
+                            <span class="sub-item">اعمالنا</span>
                         </a>
                     </li>
                     @endif
@@ -298,7 +298,7 @@
                     @elseif(request()->is('admin/testimonial/*/edit')) active
                     @endif">
                     <a href="{{route('admin.testimonial.index') . '?language=' . $default->code}}">
-                        <span class="sub-item">Testimonials</span>
+                        <span class="sub-item">آراء العملاء</span>
                     </a>
                     </li>
                     <li class="
@@ -307,7 +307,7 @@
                     @elseif(request()->path() == 'admin/member/create') active
                     @endif">
                     <a href="{{route('admin.member.index') . '?language=' . $default->code}}">
-                        <span class="sub-item">Team Section</span>
+                        <span class="sub-item">الفريق</span>
                     </a>
                     </li>
 
@@ -324,7 +324,7 @@
                     @if ($bex->home_page_pagebuilder == 0)
                     <li class="@if(request()->path() == 'admin/blogsection') active @endif">
                         <a href="{{route('admin.blogsection.index') . '?language=' . $default->code}}">
-                            <span class="sub-item">Blog Section</span>
+                            <span class="sub-item">المدونة</span>
                         </a>
                     </li>
                     @endif
@@ -334,7 +334,7 @@
                     @elseif(request()->is('admin/partner/*/edit')) active
                     @endif">
                     <a href="{{route('admin.partner.index') . '?language=' . $default->code}}">
-                        <span class="sub-item">Partners</span>
+                        <span class="sub-item">الشركاء</span>
                     </a>
                     </li>
 
@@ -343,7 +343,7 @@
                     @if(request()->path() == 'admin/sections') active
                     @endif">
                     <a href="{{route('admin.sections.index') . '?language=' . $default->code}}">
-                        <span class="sub-item">Section Customization</span>
+                        <span class="sub-item">تحسين</span>
                     </a>
                     </li>
                     @endif
@@ -359,7 +359,7 @@
             @elseif(request()->path() == 'admin/ulinks') selected
             @endif">
                 <a data-toggle="collapse" href="#footer">
-                    <span class="sub-item">Footer</span>
+                    <span class="sub-item">الفوتر</span>
                     <span class="caret"></span>
                 </a>
                 <div class="collapse
@@ -369,12 +369,12 @@
                     <ul class="nav nav-collapse subnav">
                         <li class="@if(request()->path() == 'admin/footers') active @endif">
                             <a href="{{route('admin.footer.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">Logo & Text</span>
+                                <span class="sub-item">الشعار والنص</span>
                             </a>
                         </li>
                         <li class="@if(request()->path() == 'admin/ulinks') active @endif">
                             <a href="{{route('admin.ulink.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">Useful Links</span>
+                                <span class="sub-item">روابط مفيدة</span>
                             </a>
                         </li>
                     </ul>
@@ -390,7 +390,7 @@
             @elseif(request()->is('admin/service/*/edit')) selected
             @endif">
                 <a data-toggle="collapse" href="#service">
-                    <span class="sub-item">Services</span>
+                    <span class="sub-item">الخدمات</span>
                     <span class="caret"></span>
                 </a>
                 <div class="collapse
@@ -405,7 +405,7 @@
                             @if(request()->path() == 'admin/service/settings') active
                             @endif">
                             <a href="{{route('admin.service.settings')}}">
-                                <span class="sub-item">Settings</span>
+                                <span class="sub-item">الاعدادات</span>
                             </a>
                         </li>
                         @if (serviceCategory())
@@ -414,7 +414,7 @@
                         @elseif(request()->is('admin/scategory/*/edit')) active
                         @endif">
                             <a href="{{route('admin.scategory.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">Category</span>
+                                <span class="sub-item">التصنيف</span>
                             </a>
                         </li>
                         @endif
@@ -423,7 +423,7 @@
                         @elseif(request()->is('admin/service/*/edit')) active
                         @endif">
                             <a href="{{route('admin.service.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">Services</span>
+                                <span class="sub-item">الخدمات</span>
                             </a>
                         </li>
                     </ul>
@@ -438,7 +438,7 @@
             @elseif(request()->is('admin/portfolio/*/edit')) selected
             @endif">
                 <a data-toggle="collapse" href="#portfolio">
-                    <span class="sub-item">Portfolios</span>
+                    <span class="sub-item">اعمالنا</span>
                     <span class="caret"></span>
                 </a>
                 <div class="collapse
@@ -451,7 +451,7 @@
                         @if(request()->path() == 'admin/portfolio/create') active
                         @endif">
                             <a href="{{route('admin.portfolio.create')}}">
-                                <span class="sub-item">Add Portfolio</span>
+                                <span class="sub-item">اظافة عمل جديد</span>
                             </a>
                         </li>
                         <li class="
@@ -459,7 +459,7 @@
                         @elseif(request()->is('admin/portfolio/*/edit')) active
                         @endif">
                             <a href="{{route('admin.portfolio.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">Portfolios</span>
+                                <span class="sub-item">الاعمال</span>
                             </a>
                         </li>
                     </ul>
@@ -474,7 +474,7 @@
             @elseif(request()->is('admin/blog/*/edit')) selected
             @endif">
                 <a data-toggle="collapse" href="#blogs">
-                    <span class="sub-item">Blogs</span>
+                    <span class="sub-item">المدونة</span>
                     <span class="caret"></span>
                 </a>
                 <div class="collapse
@@ -486,7 +486,7 @@
                     <ul class="nav nav-collapse subnav">
                         <li class="@if(request()->path() == 'admin/bcategorys') active @endif">
                             <a href="{{route('admin.bcategory.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">Category</span>
+                                <span class="sub-item">الفئة</span>
                             </a>
                         </li>
                         <li class="
@@ -494,12 +494,12 @@
                             @elseif(request()->is('admin/blog/*/edit')) active
                             @endif">
                             <a href="{{route('admin.blog.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">Blogs</span>
+                                <span class="sub-item">المدونة</span>
                             </a>
                         </li>
                         <li class="@if(request()->path() == 'admin/archives') active @endif">
                             <a href="{{route('admin.archive.index')}}">
-                                <span class="sub-item">Archives</span>
+                                <span class="sub-item">الارشيف</span>
                             </a>
                         </li>
                     </ul>
@@ -516,7 +516,7 @@
             @elseif(request()->is('admin/gallery/*/edit')) selected
             @endif">
                 <a data-toggle="collapse" href="#gallery">
-                    <span class="sub-item">Gallery</span>
+                    <span class="sub-item">الصور</span>
                     <span class="caret"></span>
                 </a>
                 <div class="collapse
@@ -529,13 +529,13 @@
                     <ul class="nav nav-collapse subnav">
                         <li class="@if(request()->path() == 'admin/gallery/settings') active @endif">
                             <a href="{{route('admin.gallery.settings')}}">
-                                <span class="sub-item">Settings</span>
+                                <span class="sub-item">الاعدادات</span>
                             </a>
                         </li>
                         @if ($data->gallery_category_status == 1)
                         <li class="@if(request()->path() == 'admin/gallery/categories') active @endif">
                             <a href="{{route('admin.gallery.categories') . '?language=' . $default->code}}">
-                                <span class="sub-item">Categories</span>
+                                <span class="sub-item">التصنيفات</span>
                             </a>
                         </li>
                         @endif
@@ -545,7 +545,7 @@
                             @endif"
                             >
                             <a href="{{route('admin.gallery.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">Gallery</span>
+                                <span class="sub-item">الصور</span>
                             </a>
                         </li>
                     </ul>
@@ -560,7 +560,7 @@
             @elseif(request()->path() == 'admin/faqs') selected
             @endif">
                 <a data-toggle="collapse" href="#faq">
-                    <span class="sub-item">FAQ</span>
+                    <span class="sub-item">الاسئلة المتكررة</span>
                     <span class="caret"></span>
                 </a>
                 <div class="collapse
@@ -571,19 +571,19 @@
                     <ul class="nav nav-collapse subnav">
                         <li class="@if(request()->path() == 'admin/faq/settings') active @endif">
                             <a href="{{route('admin.faq.settings')}}">
-                                <span class="sub-item">Settings</span>
+                                <span class="sub-item">الاعدادات</span>
                             </a>
                         </li>
                         @if ($data->faq_category_status == 1)
                         <li class="@if(request()->path() == 'admin/faq/categories') active @endif">
                             <a href="{{route('admin.faq.categories') . '?language=' . $default->code}}">
-                                <span class="sub-item">Categories</span>
+                                <span class="sub-item">التصنيفات</span>
                             </a>
                         </li>
                         @endif
                         <li class="@if(request()->path() == 'admin/faqs') active @endif">
                             <a href="{{route('admin.faq.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">FAQs</span>
+                                <span class="sub-item">الاسئلة المتكررة</span>
                             </a>
                         </li>
                     </ul>
@@ -600,7 +600,7 @@
             @elseif(request()->is('admin/job/*/edit')) selected
             @endif">
                 <a data-toggle="collapse" href="#career">
-                    <span class="sub-item">Career</span>
+                    <span class="sub-item">التوظيف</span>
                     <span class="caret"></span>
                 </a>
                 <div class="collapse
@@ -616,14 +616,14 @@
                             @elseif(request()->is('admin/jcategory/*/edit')) active
                             @endif">
                             <a href="{{route('admin.jcategory.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">Category</span>
+                                <span class="sub-item">التصنيف</span>
                             </a>
                         </li>
                         <li class="
                         @if(request()->is('admin/job/create')) active
                         @endif">
                             <a href="{{route('admin.job.create')}}">
-                                <span class="sub-item">Post Job</span>
+                                <span class="sub-item">نشر وظيفة جديدة</span>
                             </a>
                         </li>
                         <li class="
@@ -631,7 +631,7 @@
                         @elseif(request()->is('admin/job/*/edit')) active
                         @endif">
                             <a href="{{route('admin.job.index') . '?language=' . $default->code}}">
-                                <span class="sub-item">Job Management</span>
+                                <span class="sub-item">ادارة الوظائف</span>
                             </a>
                         </li>
                     </ul>
@@ -643,7 +643,7 @@
             <li class="
             @if(request()->path() == 'admin/contact') active @endif">
                 <a href="{{route('admin.contact.index') . '?language=' . $default->code}}">
-                    <span class="sub-item">Contact Page</span>
+                    <span class="sub-item">صفحة اتصل بنا</span>
                 </a>
             </li>
 

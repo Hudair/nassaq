@@ -7,7 +7,7 @@ return [
      * Shared translations.
      *
      */
-    'title' => 'PlusAgency Installer',
+    'title' => 'nassaq Installer',
     'next' => 'Next Step',
     'back' => 'Previous',
     'finish' => 'Install',
@@ -22,7 +22,7 @@ return [
      */
     'welcome' => [
         'templateTitle' => 'Welcome',
-        'title'   => 'PlusAgency Installer',
+        'title'   => 'nassaq Installer',
         'message' => 'Easy Installation and Setup Wizard.',
         'next'    => 'Check Requirements',
     ],
@@ -187,7 +187,7 @@ return [
      *
      */
     'installed' => [
-        'success_log_message' => 'PlusAgency successfully INSTALLED on ',
+        'success_log_message' => 'nassaq successfully INSTALLED on ',
     ],
 
     /*

@@ -60,7 +60,7 @@ $data = \App\BasicExtra::first();
                     <div class="col-12">
                         <form action="">
                             <div class="form-group py-0">
-                                <input name="term" type="text" class="form-control sidebar-search" value="" placeholder="Search Menu Here...">
+                                <input name="term" type="text" class="form-control sidebar-search" value="" placeholder="بحث...">
                             </div>
                         </form>
                     </div>
@@ -71,12 +71,12 @@ $data = \App\BasicExtra::first();
                 <li class="nav-item @if(request()->path() == 'admin/dashboard') active @endif">
                     <a href="{{route('admin.dashboard')}}">
                         <i class="la flaticon-paint-palette"></i>
-                        <p>Dashboard</p>
+                        <p>لوحة التحكم</p>
                     </a>
                 </li>
                 @endif
 
-
+                <!--
                 @if (empty($admin->role) || (!empty($permissions) && in_array('Theme & Home', $permissions)))
                 {{-- Dynamic Pages --}}
                 <li class="nav-item
@@ -85,9 +85,9 @@ $data = \App\BasicExtra::first();
                 @endif">
                 <a data-toggle="collapse" href="#themeHome">
                     <i class="la flaticon-file"></i>
-                    <p>Theme & Home
+                    <p>الثيمات والصفحة الرئيسية
                         @if ($bex->home_page_pagebuilder == 1)
-                        <span class="badge badge-danger p-1 sidenav-badge">Pagebuilder</span>
+                        <span class="badge badge-danger p-1 sidenav-badge">إانشاء الصفحات</span>
                         @endif
                     </p>
                     <span class="caret"></span>
@@ -99,14 +99,14 @@ $data = \App\BasicExtra::first();
                 <ul class="nav nav-collapse">
                     <li class="@if(request()->path() == 'admin/home-settings') active @endif">
                         <a href="{{route('admin.homeSettings')}}">
-                            <span class="sub-item">Settings</span>
+                            <span class="sub-item">الاعدادات</span>
                         </a>
                     </li>
                     @if ($bex->home_page_pagebuilder == 1)
 
                     <li class="@if(request()->path() == 'admin/home-page') active @endif">
                         <a href="#" data-toggle="modal" data-target="#pbLangModal">
-                            <span class="sub-item">Home Page Content</span>
+                            <span class="sub-item">محتوى الصفحة الرئيسية</span>
                         </a>
                     </li>
                     @endif
@@ -114,7 +114,7 @@ $data = \App\BasicExtra::first();
             </div>
         </li>
         @endif
-
+-->
 
         @if (empty($admin->role) || (!empty($permissions) && in_array('Menu Builder', $permissions)))
         {{-- Menu Builder--}}
@@ -126,7 +126,7 @@ $data = \App\BasicExtra::first();
         @endif">
         <a data-toggle="collapse" href="#websiteMenu">
             <i class="fas fa-ellipsis-v"></i>
-            <p>Website Menu Builder</p>
+            <p>القوائم</p>
             <span class="caret"></span>
         </a>
         <div class="collapse
@@ -140,17 +140,17 @@ $data = \App\BasicExtra::first();
                 @elseif(request()->path() == 'admin/megamenus/edit') active
                 @endif">
                 <a href="{{route('admin.megamenus') . '?language=' . $default->code}}">
-                    <span class="sub-item">Mega Menus</span>
+                    <span class="sub-item">ميجا منيو</span>
                 </a>
             </li>
             <li class="@if(request()->path() == 'admin/menu-builder') active @endif">
                 <a href="{{route('admin.menu_builder.index') . '?language=' . $default->code}}">
-                    <span class="sub-item">Main Menu</span>
+                    <span class="sub-item">القائمة الرئيسية</span>
                 </a>
             </li>
             <li class="@if(request()->path() == 'admin/permalinks') active @endif">
                 <a href="{{route('admin.permalinks.index')}}">
-                    <span class="sub-item">Permalinks</span>
+                    <span class="sub-item">الروابط- URLS</span>
                 </a>
             </li>
         </ul>
@@ -160,7 +160,7 @@ $data = \App\BasicExtra::first();
 
 
 
-{{-- Content Management --}}
+{{-- ادارة المحتوى --}}
 @if (empty($admin->role) || (!empty($permissions) && in_array('Content Management', $permissions)))
 @includeIf('admin.partials.content-management')
 @endif
@@ -176,7 +176,7 @@ $data = \App\BasicExtra::first();
 @endif">
 <a data-toggle="collapse" href="#pages">
     <i class="la flaticon-file"></i>
-    <p>Custom Pages <span class="badge badge-danger p-1 sidenav-badge">Pagebuilder</span></p>
+    <p>تخصيص الصفحات <span class="badge badge-danger p-1 sidenav-badge">إنشاء الصفحات</span></p>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -188,17 +188,17 @@ $data = \App\BasicExtra::first();
 <ul class="nav nav-collapse">
     <li class="@if(request()->path() == 'admin/page/settings') active @endif">
         <a href="{{route('admin.page.settings')}}">
-            <span class="sub-item">Settings</span>
+            <span class="sub-item">الأعدادات</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/page/create') active @endif">
         <a href="{{route('admin.page.create') . '?language=' . $default->code}}">
-            <span class="sub-item">Create Page</span>
+            <span class="sub-item">إنشاء صفحة</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/pages') active @endif">
         <a href="{{route('admin.page.index') . '?language=' . $default->code}}">
-            <span class="sub-item">Pages</span>
+            <span class="sub-item">الصفحات</span>
         </a>
     </li>
 </ul>
@@ -213,7 +213,7 @@ $data = \App\BasicExtra::first();
 @endif">
 <a href="{{route('admin.calendar.index') . '?language=' . $default->code}}">
     <i class="la flaticon-calendar"></i>
-    <p>Event Calendar</p>
+    <p>الانشطة</p>
 </a>
 </li>
 @endif
@@ -240,7 +240,7 @@ $data = \App\BasicExtra::first();
 >
 <a data-toggle="collapse" href="#packages">
     <i class="la flaticon-box-1"></i>
-    <p>Package Management</p>
+    <p>الاشتراكات</p>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -262,13 +262,13 @@ $data = \App\BasicExtra::first();
 <ul class="nav nav-collapse">
     <li class="@if(request()->path() == 'admin/package/settings') active @endif">
         <a href="{{route('admin.package.settings')}}">
-            <span class="sub-item">Settings</span>
+            <span class="sub-item">الاعدادات</span>
         </a>
     </li>
     @if ($data->package_category_status == 1)
     <li class="@if(request()->path() == 'admin/package/categories') active @endif">
         <a href="{{route('admin.package.categories') . '?language=' . $default->code}}">
-            <span class="sub-item">Categories</span>
+            <span class="sub-item">التصنيفات</span>
         </a>
     </li>
     @endif
@@ -277,7 +277,7 @@ $data = \App\BasicExtra::first();
         @endif"
         >
         <a href="{{route('admin.package.form') . '?language=' . $default->code}}">
-            <span class="sub-item">Form Builder</span>
+            <span class="sub-item">انشاء فورم</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/packages') active
@@ -285,31 +285,31 @@ $data = \App\BasicExtra::first();
         @endif"
         >
         <a href="{{route('admin.package.index') . '?language=' . $default->code}}">
-            <span class="sub-item">Packages</span>
+            <span class="sub-item">التسعيرات</span>
         </a>
     </li>
     @if ($bex->recurring_billing == 1)
     <li class="submenu">
         <a data-toggle="collapse" href="#manageSubscriptions"
         aria-expanded="{{((request()->routeIs('admin.subscriptions') && request()->input('type') != 'request')) ? 'true' : 'false' }}">
-        <span class="sub-item">Subscriptions</span>
+        <span class="sub-item">انشاء اشتراك</span>
         <span class="caret"></span>
     </a>
     <div class="collapse @if((request()->routeIs('admin.subscriptions') && request()->input('type') != 'request')) show @endif" id="manageSubscriptions" style="">
         <ul class="nav nav-collapse subnav">
             <li class="@if(request()->routeIs('admin.subscriptions') && request()->input('type') == 'all') active @endif">
                 <a href="{{route('admin.subscriptions', ['type' => 'all'])}}">
-                    <span class="sub-item">All Subscriptions</span>
+                    <span class="sub-item">جميع الاشتراكات</span>
                 </a>
             </li>
             <li class="@if(request()->routeIs('admin.subscriptions') && request()->input('type') == 'active') active @endif">
                 <a href="{{route('admin.subscriptions', ['type' => 'active'])}}">
-                    <span class="sub-item">Active Subscriptions</span>
+                    <span class="sub-item">الاشتراكات المفعلة</span>
                 </a>
             </li>
             <li class="@if(request()->routeIs('admin.subscriptions') && request()->input('type') == 'expired') active @endif">
                 <a href="{{route('admin.subscriptions', ['type' => 'expired'])}}">
-                    <span class="sub-item">Expired Subscriptions</span>
+                    <span class="sub-item">الاشتراكات المنتهية/span>
                 </a>
             </li>
         </ul>
@@ -317,7 +317,7 @@ $data = \App\BasicExtra::first();
 </li>
 <li class="@if(request()->routeIs('admin.subscriptions') && request()->input('type') == 'request') active @endif">
     <a href="{{route('admin.subscriptions', ['type' => 'request'])}}">
-        <span class="sub-item">Subscription Requests</span>
+        <span class="sub-item">طلبات الاشتراكات</span>
     </a>
 </li>
 @endif
@@ -325,39 +325,39 @@ $data = \App\BasicExtra::first();
 <li class="submenu">
     <a data-toggle="collapse" href="#packageOrders"
     aria-expanded="{{(request()->path() == 'admin/all/orders' || request()->path() == 'admin/pending/orders' || request()->path() == 'admin/processing/orders' || request()->path() == 'admin/completed/orders' || request()->path() == 'admin/rejected/orders' || request()->path() == 'admin/package/order/report') ? 'true' : 'false' }}">
-    <span class="sub-item">Manage Orders</span>
+    <span class="sub-item">ادارة الطلبات</span>
     <span class="caret"></span>
 </a>
 <div class="collapse {{(request()->path() == 'admin/all/orders' || request()->path() == 'admin/pending/orders' || request()->path() == 'admin/processing/orders' || request()->path() == 'admin/completed/orders' || request()->path() == 'admin/package/order/report') ? 'show' : '' }}" id="packageOrders" style="">
     <ul class="nav nav-collapse subnav">
         <li class="@if(request()->path() == 'admin/all/orders') active @endif">
             <a href="{{route('admin.all.orders')}}">
-                <span class="sub-item">All Orders</span>
+                <span class="sub-item">جميع الطلبات</span>
             </a>
         </li>
         <li class="@if(request()->path() == 'admin/pending/orders') active @endif">
             <a href="{{route('admin.pending.orders')}}">
-                <span class="sub-item">Pending Orders</span>
+                <span class="sub-item">الطلبات المعلقة</span>
             </a>
         </li>
         <li class="@if(request()->path() == 'admin/processing/orders') active @endif">
             <a href="{{route('admin.processing.orders')}}">
-                <span class="sub-item">Processing Orders</span>
+                <span class="sub-item">الطلبات تحت المعالجة</span>
             </a>
         </li>
         <li class="@if(request()->path() == 'admin/completed/orders') active @endif">
             <a href="{{route('admin.completed.orders')}}">
-                <span class="sub-item">Completed Orders</span>
+                <span class="sub-item">الطلبات المكتملة</span>
             </a>
         </li>
         <li class="@if(request()->path() == 'admin/rejected/orders') active @endif">
             <a href="{{route('admin.rejected.orders')}}">
-                <span class="sub-item">Rejected Orders</span>
+                <span class="sub-item">الطلبات المرفوضة</span>
             </a>
         </li>
         <li class="@if(request()->path() == 'admin/package/order/report') active @endif">
             <a href="{{route('admin.package.report')}}">
-                <span class="sub-item">Report</span>
+                <span class="sub-item">تقرير</span>
             </a>
         </li>
     </ul>
@@ -383,7 +383,7 @@ $data = \App\BasicExtra::first();
 @endif">
 <a data-toggle="collapse" href="#quote">
     <i class="la flaticon-list"></i>
-    <p>Quote Management</p>
+    <p>الطلبات</p>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -401,7 +401,7 @@ $data = \App\BasicExtra::first();
     @if(request()->path() == 'admin/quote/visibility') active
     @endif">
     <a href="{{route('admin.quote.visibility')}}">
-        <span class="sub-item">Visibility</span>
+        <span class="sub-item">الحالة</span>
     </a>
 </li>
 <li class="
@@ -409,32 +409,32 @@ $data = \App\BasicExtra::first();
 @elseif(request()->is('admin/quote/*/inputEdit')) active
 @endif">
 <a href="{{route('admin.quote.form') . '?language=' . $default->code}}">
-    <span class="sub-item">Form Builder</span>
+    <span class="sub-item">إنشاء فورم</span>
 </a>
 </li>
 <li class="@if(request()->path() == 'admin/all/quotes') active @endif">
     <a href="{{route('admin.all.quotes')}}">
-        <span class="sub-item">All Quotes</span>
+        <span class="sub-item">جميع الطلبات</span>
     </a>
 </li>
 <li class="@if(request()->path() == 'admin/pending/quotes') active @endif">
     <a href="{{route('admin.pending.quotes')}}">
-        <span class="sub-item">Pending Quotes</span>
+        <span class="sub-item">الطلبات المعلقة</span>
     </a>
 </li>
 <li class="@if(request()->path() == 'admin/processing/quotes') active @endif">
     <a href="{{route('admin.processing.quotes')}}">
-        <span class="sub-item">Processing Quotes</span>
+        <span class="sub-item">الطلبات تحت المعالجة</span>
     </a>
 </li>
 <li class="@if(request()->path() == 'admin/completed/quotes') active @endif">
     <a href="{{route('admin.completed.quotes')}}">
-        <span class="sub-item">Completed Quotes</span>
+        <span class="sub-item">الطلبات المكتملة</span>
     </a>
 </li>
 <li class="@if(request()->path() == 'admin/rejected/quotes') active @endif">
     <a href="{{route('admin.rejected.quotes')}}">
-        <span class="sub-item">Rejected Quotes</span>
+        <span class="sub-item">الطلبات المرفوضة</span>
     </a>
 </li>
 </ul>
@@ -467,7 +467,7 @@ $data = \App\BasicExtra::first();
 @endif">
 <a data-toggle="collapse" href="#category">
     <i class="fas fa-store-alt"></i>
-    <p>Shop Management</p>
+    <p>ادارة المتجر</p>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -494,12 +494,12 @@ $data = \App\BasicExtra::first();
 <ul class="nav nav-collapse">
     <li class="@if(request()->routeIs('admin.product.settings')) active @endif">
         <a href="{{route('admin.product.settings')}}">
-            <span class="sub-item">Settings</span>
+            <span class="sub-item">الاعدادات</span>
         </a>
     </li>
     <li class="@if(request()->routeIs('admin.product.tags')) active @endif">
         <a href="{{route('admin.product.tags'). '?language=' . $default->code}}">
-            <span class="sub-item">Popular Tags</span>
+            <span class="sub-item">العلامات المشهورة</span>
         </a>
     </li>
 
@@ -509,7 +509,7 @@ $data = \App\BasicExtra::first();
     @elseif(request()->routeIs('admin.shipping.edit')) active
     @endif">
     <a href="{{route('admin.shipping.index'). '?language=' . $default->code}}">
-        <span class="sub-item">Shipping Charges</span>
+        <span class="sub-item">اجور الشحن</span>
     </a>
 </li>
 @endif
@@ -520,14 +520,14 @@ $data = \App\BasicExtra::first();
 @elseif(request()->routeIs('admin.coupon.edit')) active
 @endif">
 <a href="{{route('admin.coupon.index')}}">
-    <span class="sub-item">Coupons</span>
+    <span class="sub-item">الكوبونات</span>
 </a>
 </li>
 @endif
 <li class="submenu">
     <a data-toggle="collapse" href="#productManagement"
     aria-expanded="{{(request()->path() == 'admin/category' || request()->is('admin/category/*/edit') || request()->routeIs('admin.product.type') || request()->routeIs('admin.product.create') || request()->routeIs('admin.product.index') || request()->routeIs('admin.product.edit')) ? 'true' : 'false' }}">
-    <span class="sub-item">Manage Products</span>
+    <span class="sub-item">ادارة المنتجات</span>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -544,7 +544,7 @@ $data = \App\BasicExtra::first();
     @elseif(request()->is('admin/category/*/edit')) active
     @endif">
     <a href="{{route('admin.category.index') . '?language=' . $default->code}}">
-        <span class="sub-item">Category</span>
+        <span class="sub-item">التصنيف</span>
     </a>
 </li>
 <li class="
@@ -552,7 +552,7 @@ $data = \App\BasicExtra::first();
 @elseif(request()->routeIs('admin.product.create')) active
 @endif">
 <a href="{{route('admin.product.type')}}">
-    <span class="sub-item">Add Product</span>
+    <span class="sub-item">اظافة منتج</span>
 </a>
 </li>
 <li class="
@@ -560,7 +560,7 @@ $data = \App\BasicExtra::first();
 @elseif(request()->is('admin/product/*/edit')) active
 @endif">
 <a href="{{route('admin.product.index'). '?language=' . $default->code}}">
-    <span class="sub-item">Products</span>
+    <span class="sub-item">المنتجات</span>
 </a>
 </li>
 </ul>
@@ -571,7 +571,7 @@ $data = \App\BasicExtra::first();
 <li class="submenu">
     <a data-toggle="collapse" href="#manageOrders"
     aria-expanded="{{(request()->routeIs('admin.all.product.orders') || request()->routeIs('admin.pending.product.orders') || request()->routeIs('admin.processing.product.orders') || request()->routeIs('admin.completed.product.orders') || request()->routeIs('admin.rejected.product.orders') || request()->routeIs('admin.product.details') || (request()->path() == 'admin/product/orders/report')) ? 'true' : 'false' }}">
-    <span class="sub-item">Manage Orders</span>
+    <span class="sub-item">ادارة الطلبات</span>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -586,32 +586,32 @@ $data = \App\BasicExtra::first();
 <ul class="nav nav-collapse subnav">
     <li class="@if(request()->path() == 'admin/product/all/orders') active @endif">
         <a href="{{route('admin.all.product.orders')}}">
-            <span class="sub-item">All Orders</span>
+            <span class="sub-item">جميع الطلبات</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/product/pending/orders') active @endif">
         <a href="{{route('admin.pending.product.orders')}}">
-            <span class="sub-item">Pending Orders</span>
+            <span class="sub-item">الطلبات المعلقة</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/product/processing/orders') active @endif">
         <a href="{{route('admin.processing.product.orders')}}">
-            <span class="sub-item">Processing Orders</span>
+            <span class="sub-item">الطلبات تحت المعالجة</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/product/completed/orders') active @endif">
         <a href="{{route('admin.completed.product.orders')}}">
-            <span class="sub-item">Completed Orders</span>
+            <span class="sub-item">الطلبات المكتملة</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/product/rejected/orders') active @endif">
         <a href="{{route('admin.rejected.product.orders')}}">
-            <span class="sub-item">Rejected Orders</span>
+            <span class="sub-item">الطلبات المرفوضة</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/product/orders/report') active @endif">
         <a href="{{route('admin.orders.report')}}">
-            <span class="sub-item">Report</span>
+            <span class="sub-item">تقرير</span>
         </a>
     </li>
 </ul>
@@ -622,6 +622,8 @@ $data = \App\BasicExtra::first();
 </div>
 </li>
 @endif
+
+<!--
 
 @if (empty($admin->role) || (!empty($permissions) && in_array('Course Management', $permissions)))
 {{-- Courses --}}
@@ -657,12 +659,12 @@ id="course"
 <ul class="nav nav-collapse">
     <li class="@if(request()->path() == 'admin/course/settings') active @endif">
         <a href="{{route('admin.course.settings')}}">
-            <span class="sub-item">Settings</span>
+            <span class="sub-item">الاعدادات</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/course_categories') active @endif">
         <a href="{{route('admin.course_category.index') . '?language=' . $default->code}}">
-            <span class="sub-item">Category</span>
+            <span class="sub-item">تصنيف</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/course/create') active
@@ -694,8 +696,8 @@ id="course"
 </div>
 </li>
 @endif
-
-
+-->
+<!--
 
 {{-- Events Manage --}}
 @if (empty($admin->role) || (!empty($permissions) && in_array('Events Management', $permissions)))
@@ -723,12 +725,12 @@ id="course"
 <ul class="nav nav-collapse">
     <li class="@if(request()->path() == 'admin/event/settings') active @endif">
         <a href="{{route('admin.event.settings')}}">
-            <span class="sub-item">Settings</span>
+            <span class="sub-item">الاعدادات</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/event/categories') active @endif">
         <a href="{{route('admin.event.category.index') . '?language=' . $default->code}}">
-            <span class="sub-item">Category</span>
+            <span class="sub-item">تصنيف</span>
         </a>
     </li>
     <li class="
@@ -753,7 +755,8 @@ id="course"
 </div>
 </li>
 @endif
-
+-->
+<!--
 @if (empty($admin->role) || (!empty($permissions) && in_array('Donation Management', $permissions)))
 <li class="nav-item
 @if(request()->path() == 'admin/donations') active
@@ -777,7 +780,7 @@ id="course"
 <ul class="nav nav-collapse">
     <li class="@if(request()->path() == 'admin/donation/settings') active @endif">
         <a href="{{route('admin.donation.settings')}}">
-            <span class="sub-item">Settings</span>
+            <span class="sub-item">الاعدادات</span>
         </a>
     </li>
     <li class="
@@ -802,8 +805,10 @@ id="course"
 </div>
 </li>
 @endif
+-->
 
-{{-- Knowledgebase --}}
+
+{{-- قاعدة المعرفة --}}
 @if (empty($admin->role) || (!empty($permissions) && in_array('Knowledgebase', $permissions)))
 {{-- Articles --}}
 <li class="nav-item
@@ -814,7 +819,7 @@ id="course"
 @endif">
 <a data-toggle="collapse" href="#article">
     <i class='fas fa-pencil-alt'></i>
-    <p>Knowledgebase</p>
+    <p>قاعدة المعرفة</p>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -826,14 +831,14 @@ id="course"
 <ul class="nav nav-collapse">
     <li class="@if(request()->path() == 'admin/article_categories') active @endif">
         <a href="{{route('admin.article_category.index') . '?language=' . $default->code}}">
-            <span class="sub-item">Category</span>
+            <span class="sub-item">تصنيف</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/articles') active
         @elseif(request()->is('admin/articles/*/edit')) active
         @endif">
         <a href="{{route('admin.article.index') . '?language=' . $default->code}}">
-            <span class="sub-item">Articles</span>
+            <span class="sub-item">المقالات</span>
         </a>
     </li>
 </ul>
@@ -842,7 +847,7 @@ id="course"
 @endif
 
 @if (empty($admin->role) || (!empty($permissions) && in_array('Tickets', $permissions)))
-{{-- Tickets --}}
+{{-- التذاكر --}}
 <li class="nav-item
 @if(request()->path() == 'admin/all/tickets') active
 @elseif(request()->path() == 'admin/pending/tickets') active
@@ -853,7 +858,7 @@ id="course"
 @endif">
 <a data-toggle="collapse" href="#tickets">
     <i class="la flaticon-web-1"></i>
-    <p>Support Tickets</p>
+    <p>الدعم الفني</p>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -867,27 +872,27 @@ id="course"
 <ul class="nav nav-collapse">
     <li class="@if(request()->path() == 'admin/ticket/settings') active @endif">
         <a href="{{route('admin.ticket.settings')}}">
-            <span class="sub-item">Settings</span>
+            <span class="sub-item">الاعدادات</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/all/tickets') active @endif">
         <a href="{{route('admin.tickets.all')}}">
-            <span class="sub-item">All Tickets</span>
+            <span class="sub-item">جميع التذاكر</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/pending/tickets') active @endif">
         <a href="{{route('admin.tickets.pending')}}">
-            <span class="sub-item">Pending Tickets</span>
+            <span class="sub-item">التذاكر المعلقة</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/open/tickets') active @endif">
         <a href="{{route('admin.tickets.open')}}">
-            <span class="sub-item">Open Tickets</span>
+            <span class="sub-item">التذاكر المفتوحة</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/closed/tickets') active @endif">
         <a href="{{route('admin.tickets.closed')}}">
-            <span class="sub-item">Closed Tickets</span>
+            <span class="sub-item">التذاكر المغلقة</span>
         </a>
     </li>
 </ul>
@@ -918,7 +923,7 @@ id="course"
 <ul class="nav nav-collapse">
     <li class="@if(request()->path() == 'admin/rss/create') active @endif">
         <a href="{{route('admin.rss.create')}}">
-            <span class="sub-item">Import RSS Feeds</span>
+            <span class="sub-item">استيراد راجع RSS</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/rss/feeds') active @endif">
@@ -928,7 +933,7 @@ id="course"
     </li>
     <li class="@if(request()->path() == 'admin/rss') active @endif">
         <a href="{{route('admin.rss.index'). '?language=' . $default->code}}">
-            <span class="sub-item">RSS Posts</span>
+            <span class="sub-item">منشورات RSS</span>
         </a>
     </li>
 </ul>
@@ -952,7 +957,7 @@ id="course"
 @endif">
 <a data-toggle="collapse" href="#usersManagement">
     <i class="la flaticon-users"></i>
-    <p>Users Management</p>
+    <p>ادارة المستخدمين</p>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -968,14 +973,14 @@ id="course"
 @endif" id="usersManagement">
 <ul class="nav nav-collapse">
 
-    {{-- Registered Users --}}
+    {{-- المستخدمين المسجلين --}}
     <li class="
     @if(request()->routeIs('admin.register.user')) active
     @elseif(request()->routeIs('register.user.view')) active
     @elseif(request()->routeIs('register.user.changePass')) active
     @endif">
     <a href="{{route('admin.register.user')}}">
-        <span class="sub-item">Registered Users</span>
+        <span class="sub-item">المستخدمين المسجلين</span>
     </a>
 </li>
 
@@ -985,7 +990,7 @@ id="course"
 @elseif(request()->path() == 'admin/pushnotification/send') selected
 @endif">
 <a data-toggle="collapse" href="#pushNotification">
-    <span class="sub-item">Push Notification</span>
+    <span class="sub-item">الاشعارات</span>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -995,12 +1000,12 @@ id="course"
 <ul class="nav nav-collapse subnav">
     <li class="@if(request()->path() == 'admin/pushnotification/settings') active @endif">
         <a href="{{route('admin.pushnotification.settings')}}">
-            <span class="sub-item">Settings</span>
+            <span class="sub-item">الاعدادات</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/pushnotification/send') active @endif">
         <a href="{{route('admin.pushnotification.send')}}">
-            <span class="sub-item">Send Notification</span>
+            <span class="sub-item">الاشعارات المرسلة</span>
         </a>
     </li>
 </ul>
@@ -1013,7 +1018,7 @@ id="course"
 @elseif(request()->path() == 'admin/mailsubscriber') selected
 @endif">
 <a data-toggle="collapse" href="#subscribers">
-    <span class="sub-item">Subscribers</span>
+    <span class="sub-item">الاشتراكات</span>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -1023,12 +1028,12 @@ id="course"
 <ul class="nav nav-collapse subnav">
     <li class="@if(request()->path() == 'admin/subscribers') active @endif">
         <a href="{{route('admin.subscriber.index')}}">
-            <span class="sub-item">Subscribers</span>
+            <span class="sub-item">الاشتراكات</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/mailsubscriber') active @endif">
         <a href="{{route('admin.mailsubscriber')}}">
-            <span class="sub-item">Mail to Subscribers</span>
+            <span class="sub-item">ارسال بريد الى المشتركين</span>
         </a>
     </li>
 </ul>
@@ -1050,7 +1055,7 @@ id="course"
 @endif">
 <a data-toggle="collapse" href="#announcementPopup">
     <i class="fas fa-bullhorn"></i>
-    <p>Announcement Popup</p>
+    <p>اعلانات Popup</p>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -1064,7 +1069,7 @@ id="course"
         @elseif(request()->path() == 'admin/popup/create') active
         @endif">
         <a href="{{route('admin.popup.types')}}">
-            <span class="sub-item">Add Popup</span>
+            <span class="sub-item">اظافة Popup</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/popups') active
@@ -1110,7 +1115,7 @@ id="course"
 @endif">
 <a data-toggle="collapse" href="#basic">
     <i class="la flaticon-settings"></i>
-    <p>Settings</p>
+    <p>الاعدادات</p>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -1142,31 +1147,31 @@ id="course"
 <ul class="nav nav-collapse">
     <li class="@if(request()->path() == 'admin/basicinfo') active @endif">
         <a href="{{route('admin.basicinfo')}}">
-            <span class="sub-item">General Settings</span>
+            <span class="sub-item">الاعدادات العامة</span>
         </a>
     </li>
     <li class="submenu">
         <a data-toggle="collapse" href="#emailset" aria-expanded="{{(request()->path() == 'admin/mail-from-admin' || request()->path() == 'admin/mail-to-admin' || request()->path() == 'admin/email-templates' || request()->routeIs('admin.email.editTemplate')) ? 'true' : 'false' }}">
-            <span class="sub-item">Email Settings</span>
+            <span class="sub-item">اعدادات البريد الالكتروني</span>
             <span class="caret"></span>
         </a>
         <div class="collapse {{(request()->path() == 'admin/mail-from-admin' || request()->path() == 'admin/mail-to-admin' || request()->path() == 'admin/email-templates' || request()->routeIs('admin.email.editTemplate')) ? 'show' : '' }}" id="emailset" style="">
             <ul class="nav nav-collapse subnav">
                 <li class="@if(request()->path() == 'admin/mail-from-admin') active @endif">
                     <a href="{{route('admin.mailFromAdmin')}}">
-                        <span class="sub-item">Mail from Admin</span>
+                        <span class="sub-item">ارسال بريد من الادمن</span>
                     </a>
                 </li>
                 <li class="@if(request()->path() == 'admin/mail-to-admin') active @endif">
                     <a href="{{route('admin.mailToAdmin')}}">
-                        <span class="sub-item">Mail to Admin</span>
+                        <span class="sub-item">ارسال بريد الى الادمن</span>
                     </a>
                 </li>
                 <li class="@if(request()->path() == 'admin/email-templates') active
                     @elseif(request()->routeIs('admin.email.editTemplate')) active
                     @endif">
                     <a href="{{route('admin.email.templates')}}">
-                        <span class="sub-item">Email Templates</span>
+                        <span class="sub-item">قوالب البريد</span>
                     </a>
                 </li>
             </ul>
@@ -1174,12 +1179,12 @@ id="course"
     </li>
     <li class="@if(request()->path() == 'admin/file-manager') active @endif">
         <a href="{{route('admin.file-manager')}}">
-            <span class="sub-item">File Manager</span>
+            <span class="sub-item">ادارة الملفات</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/logo') active @endif">
         <a href="{{route('admin.logo')}}">
-            <span class="sub-item">Logo & Images</span>
+            <span class="sub-item">الشعار والصور</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/preloader') active @endif">
@@ -1189,23 +1194,23 @@ id="course"
     </li>
     <li class="@if(request()->routeIs('admin.featuresettings')) active @endif">
         <a href="{{route('admin.featuresettings') . '?language=' . $default->code}}">
-            <span class="sub-item">Preferences</span>
+            <span class="sub-item">التفضيلات</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/support') active @endif">
         <a href="{{route('admin.support') . '?language=' . $default->code}}">
-            <span class="sub-item">Support Informations</span>
+            <span class="sub-item">معلومات الدعم</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/social') active
         @elseif(request()->is('admin/social/*')) active @endif">
         <a href="{{route('admin.social.index')}}">
-            <span class="sub-item">Social Links</span>
+            <span class="sub-item">روابط السوشل ميديا</span>
         </a>
     </li>
     <li class="@if(request()->path() == 'admin/heading') active @endif">
         <a href="{{route('admin.heading') . '?language=' . $default->code}}">
-            <span class="sub-item">Page Headings</span>
+            <span class="sub-item">الترويسة</span>
         </a>
     </li>
     <li class="
@@ -1213,7 +1218,7 @@ id="course"
     @elseif(request()->path() == 'admin/offline/gateways') selected
     @endif">
     <a data-toggle="collapse" href="#gateways">
-        <span class="sub-item">Payment Gateways</span>
+        <span class="sub-item">بوابات الدفع</span>
         <span class="caret"></span>
     </a>
     <div class="collapse
@@ -1223,12 +1228,12 @@ id="course"
     <ul class="nav nav-collapse subnav">
         <li class="@if(request()->path() == 'admin/gateways') active @endif">
             <a href="{{route('admin.gateway.index')}}">
-                <span class="sub-item">Online Gateways</span>
+                <span class="sub-item">بوابات الدفع اونلاين</span>
             </a>
         </li>
         <li class="@if(request()->path() == 'admin/offline/gateways') active @endif">
             <a href="{{route('admin.gateway.offline') . '?language=' . $default->code}}">
-                <span class="sub-item">Offline Gateways</span>
+                <span class="sub-item">بوابات الدفع اوفلاين</span>
             </a>
         </li>
     </ul>
@@ -1240,12 +1245,12 @@ id="course"
 @elseif(request()->is('admin/language/*/edit/keyword')) active
 @endif">
 <a href="{{route('admin.language.index')}}">
-    <span class="sub-item">Language</span>
+    <span class="sub-item">اللغة</span>
 </a>
 </li>
 <li class="@if(request()->path() == 'admin/script') active @endif">
     <a href="{{route('admin.script')}}">
-        <span class="sub-item">Plugins</span>
+        <span class="sub-item">الاظافات</span>
     </a>
 </li>
 <li class="@if(request()->path() == 'admin/seo') active @endif">
@@ -1255,13 +1260,13 @@ id="course"
 </li>
 <li class="@if(request()->path() == 'admin/maintainance') active @endif">
     <a href="{{route('admin.maintainance')}}">
-        <span class="sub-item">Maintenance Mode</span>
+        <span class="sub-item">وضع الصيانة</span>
     </a>
 </li>
 
 <li class="@if(request()->path() == 'admin/cookie-alert') active @endif">
     <a href="{{route('admin.cookie.alert') . '?language=' . $default->code}}">
-        <span class="sub-item">Cookie Alert</span>
+        <span class="sub-item">اشعارات ملفات الارتباط</span>
     </a>
 </li>
 
@@ -1282,14 +1287,14 @@ id="course"
     @if(request()->path() == 'admin/sitemap') selected
     @endif">
     <a href="{{route('admin.sitemap.index') . '?language=' . $default->code}}">
-        <span class="sub-item">Sitemap</span>
+        <span class="sub-item">خريطة الموقع</span>
     </a>
 </li>
 <li class="
 @if(request()->path() == 'admin/backup') selected
 @endif">
 <a href="{{route('admin.backup.index')}}">
-    <span class="sub-item">Database Backup</span>
+    <span class="sub-item">نسخ احتياطي</span>
 </a>
 </li>
 <li>
@@ -1316,7 +1321,7 @@ id="course"
 @endif">
 <a data-toggle="collapse" href="#adminsManagement">
     <i class="fas fa-users-cog"></i>
-    <p>Admins Management</p>
+    <p>ادارة المدراء</p>
     <span class="caret"></span>
 </a>
 <div class="collapse
@@ -1331,7 +1336,7 @@ id="course"
     @elseif(request()->is('admin/role/*/permissions/manage')) active
     @endif">
     <a href="{{route('admin.role.index')}}">
-        <span class="sub-item">Role Management</span>
+        <span class="sub-item">ادارة الادوار</span>
     </a>
 </li>
 <li class="
@@ -1339,7 +1344,7 @@ id="course"
 @elseif(request()->is('admin/user/*/edit')) active
 @endif">
 <a href="{{route('admin.user.index')}}">
-    <span class="sub-item">Admins</span>
+    <span class="sub-item">المدراء</span>
 </a>
 </li>
 </ul>
@@ -1354,7 +1359,7 @@ id="course"
 <li class="nav-item @if(request()->path() == 'admin/feedbacks') active @endif">
     <a href="{{route('admin.client_feedbacks')}}">
         <i class="fas fa-pen-fancy"></i>
-        <p>Client Feedbacks</p>
+        <p>مراجعات العملاء</p>
     </a>
 </li>
 @endif

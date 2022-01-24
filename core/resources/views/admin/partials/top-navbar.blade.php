@@ -55,11 +55,11 @@
               </li>
               <li>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{route('admin.editProfile')}}">Edit Profile</a>
+                <a class="dropdown-item" href="{{route('admin.editProfile')}}">الملف الشخصي</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{route('admin.changePass')}}">Change Password</a>
+                <a class="dropdown-item" href="{{route('admin.changePass')}}">تغيير كلمة المرور</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{route('admin.logout')}}">Logout</a>
+                <a class="dropdown-item" href="{{route('admin.logout')}}">تسجيل الخروج</a>
               </li>
             </div>
           </ul>

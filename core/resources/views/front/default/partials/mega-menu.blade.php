@@ -27,12 +27,7 @@
         $data = $currentLang->megamenus()->where('type', 'portfolios')->where('category', 0);
         $itemModel = '\App\Portfolio';
         $catAvailable = false;
-    } elseif ($link["type"] == 'courses-megamenu') {
-        $data = $currentLang->megamenus()->where('type', 'courses')->where('category', 1);
-        $cats = $currentLang->course_categories()->where('status', 1)->get();
-        $catModel = '\App\CourseCategory';
-        $itemModel = '\App\Course';
-        $allUrl = route("courses");
+   
     } elseif ($link["type"] == 'causes-megamenu') {
         $data = $currentLang->megamenus()->where('type', 'causes')->where('category', 0);
         $itemModel = '\App\Donation';
@@ -88,8 +83,7 @@
                                         $catUrl = route('front.product', ['category_id' => $mcat->id]);
                                     } elseif ($link["type"] == 'portfolios-megamenu') {
                                         $catUrl = route('front.portfolios', ['category' => $mcat->id]);
-                                    } elseif ($link["type"] == 'courses-megamenu') {
-                                        $catUrl = route('courses', ['category_id' => $mcat->id]);
+                                
                                     } elseif ($link["type"] == 'events-megamenu') {
                                         $catUrl = route('front.events', ['category' => $mcat->id]);
                                     } elseif ($link["type"] == 'blogs-megamenu') {
@@ -128,8 +122,8 @@
                                 $catUrl = route('front.product', ['category_id' => $mcat->id]);
                             } elseif ($link["type"] == 'portfolios-megamenu') {
                                 $catUrl = route('front.portfolios', ['category' => $mcat->id]);
-                            } elseif ($link["type"] == 'courses-megamenu') {
-                                $catUrl = route('courses', ['category_id' => $mcat->id]);
+                           
+                            
                             } elseif ($link["type"] == 'events-megamenu') {
                                 $catUrl = route('front.events', ['category' => $mcat->id]);
                             } elseif ($link["type"] == 'blogs-megamenu') {
@@ -158,9 +152,7 @@
                                         } elseif ($link["type"] == 'portfolios-megamenu') {
                                             $detailsUrl = route('front.portfoliodetails',[$mItem->slug]);
                                             $imgSrc = asset('assets/front/img/portfolios/featured/' . $mItem->featured_image);
-                                        } elseif ($link["type"] == 'courses-megamenu') {
-                                            $detailsUrl = route('course_details',[$mItem->slug]);
-                                            $imgSrc = asset('assets/front/img/courses/' . $mItem->course_image);
+                                        
                                         } elseif ($link["type"] == 'events-megamenu') {
                                             $eventImg = json_decode($mItem->image, true);
                                             $detailsUrl = route('front.event_details',[$mItem->slug]);

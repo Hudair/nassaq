@@ -58,7 +58,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                          <td>Services</td>
+                          <td>الخدمات</td>
                           <td>
                             <a class="btn btn-secondary btn-sm" href="{{route('admin.megamenu.edit', ['language' => request()->input('language'), 'type' => 'services'])}}">
                               <span class="btn-label">
@@ -69,7 +69,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Portfolios</td>
+                          <td>الاعمال</td>
                           <td>
                             <a class="btn btn-secondary btn-sm" href="{{route('admin.megamenu.edit', ['language' => request()->input('language'), 'type' => 'portfolios'])}}">
                               <span class="btn-label">
@@ -80,7 +80,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Products</td>
+                          <td>المنتجات</td>
                           <td>
                             <a class="btn btn-secondary btn-sm" href="{{route('admin.megamenu.edit', ['language' => request()->input('language'), 'type' => 'products'])}}">
                               <span class="btn-label">
@@ -90,17 +90,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
-                          <td>Courses</td>
-                          <td>
-                            <a class="btn btn-secondary btn-sm" href="{{route('admin.megamenu.edit', ['language' => request()->input('language'), 'type' => 'courses'])}}">
-                              <span class="btn-label">
-                                <i class="fas fa-edit"></i>
-                              </span>
-                              Edit
-                            </a>
-                          </td>
-                        </tr>
+                        <!--
                         <tr>
                           <td>Causes</td>
                           <td>
@@ -112,6 +102,7 @@
                             </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td>Events</td>
                           <td>
@@ -123,8 +114,9 @@
                             </a>
                           </td>
                         </tr>
+                        -->
                         <tr>
-                          <td>Blogs</td>
+                          <td>المدونة</td>
                           <td>
                             <a class="btn btn-secondary btn-sm" href="{{route('admin.megamenu.edit', ['language' => request()->input('language'), 'type' => 'blogs'])}}">
                               <span class="btn-label">

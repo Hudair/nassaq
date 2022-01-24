@@ -167,6 +167,7 @@
                             </div>
                     </div>
                 </div>
+                
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="form shipping-info">
                         <div class="shop-title-box">
@@ -312,7 +313,7 @@
                 </div>
             </div>
         </div>
-
+                                    
         <div class="bottom">
             <div class="container">
                 <div class="row">

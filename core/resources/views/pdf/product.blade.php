@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="confirmation-message bg-primary" style="padding: 5px 0px;margin-bottom: 40px;">
-                        <h2 class="text-center"><strong>{{__('ORDER INVOICE')}}</strong></h2>
+                        <h2 class="text-center"><strong>{{__('الفاتورة')}}</strong></h2>
                     </div>
 
                     <div class="row">

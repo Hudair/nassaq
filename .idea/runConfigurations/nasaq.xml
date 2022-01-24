@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="nasaq" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" singleton="false">
+    <TestRunner directory="$PROJECT_DIR$" />
+    <method v="2" />
+  </configuration>
+</component>

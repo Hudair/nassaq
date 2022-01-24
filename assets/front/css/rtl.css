@@ -42,11 +42,13 @@ html {
   margin-left: 0
 }
 
-.hero-txt {
-  padding-right: 0;
-  padding-left: 270px;
-  text-align: right
+  .hero-txt {
+    padding-right: 0;
+    padding-left: 190px;
+    text-align: right;
+    padding-top: 171px
 }
+
 
 .single-hero-feature {
   text-align: right

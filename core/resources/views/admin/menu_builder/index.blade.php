@@ -103,18 +103,7 @@ $selLang = \App\Language::where('code', request()->input('language'))->first();
                                     <li class="list-group-item">{{__('Team Members')}} <a data-text="{{__('Team Members')}}" data-type="team" class="addToMenus btn btn-primary btn-sm float-right" href="">Add to Menus</a></li>
                                     <li class="list-group-item">{{__('Career')}} <a data-text="{{__('Career')}}" data-type="career" class="addToMenus btn btn-primary btn-sm float-right" href="">Add to Menus</a></li>
 
-                                    @if ($bex->is_donation == 1)
-                                        <li class="list-group-item">
-                                            {{__('Courses')}}
-                                            <span class="badge badge-dark">Non Mega Menu</span>
-                                            <a data-text="{{__('Courses')}}" data-type="courses" class="addToMenus btn btn-primary btn-sm float-right" href="">Add to Menus</a>
-                                        </li>
-                                        <li class="list-group-item">
-                                            {{__('Courses')}}
-                                            <span class="badge badge-danger">Mega Menu</span>
-                                            <a data-text="{{__('Courses')}}" data-type="courses-megamenu" class="addToMenus btn btn-primary btn-sm float-right" href="">Add to Menus</a>
-                                        </li>
-                                    @endif
+                                    
 
                                     @if ($bex->is_donation == 1)
                                         <li class="list-group-item">
