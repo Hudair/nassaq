@@ -23,6 +23,8 @@
     <div class="card">
       <div class="card-header">
         <div class="card-title d-inline-block">Languages</div>
+
+        <!--
         <a
           href="#"
           class="btn btn-primary float-right"
@@ -30,6 +32,7 @@
           data-target="#createModal"
         ><i class="fas fa-plus"></i> Add Language</a>
       </div>
+-->
       <div class="card-body">
         <div class="row">
           <div class="col-lg-12">
@@ -81,10 +84,12 @@
                         </span>
                         Edit Keyword
                       </a>
+                      <!--
                       <a
                         class="btn btn-secondary btn-sm"
                         href="{{route('admin.language.edit', $language->id)}}"
                       >
+                      
                         <span class="btn-label">
                           <i class="fas fa-edit"></i>
                         </span>
@@ -95,6 +100,8 @@
                         action="{{route('admin.language.delete', $language->id)}}"
                         method="post"
                       >
+-->
+                      <!--
                         @csrf
                         <button
                           type="submit"
@@ -105,6 +112,7 @@
                           </span>
                           Delete
                         </button>
+-->
                       </form>
                     </td>
                   </tr>
