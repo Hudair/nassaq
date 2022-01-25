@@ -94,7 +94,9 @@
         </form>
       </div>
     </div>
+        
 
+    <!--
 
     <div class="col-lg-4">
       <div class="card">
@@ -732,6 +734,7 @@
             </form>
         </div>
     </div>
+-->
   </div>
 
 @endsection

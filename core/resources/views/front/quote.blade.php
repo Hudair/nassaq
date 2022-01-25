@@ -94,7 +94,7 @@
                                   <label>{{$input->label}} @if($input->required == 1) <span>**</span> @endif</label>
                                   <input type="file" name="{{$input->name}}" value="">
                                 </div>
-                                <p class="text-warning mb-0">** {{__('Only zip file is allowed')}}</p>
+                                <p class="text-warning mb-0">** {{__('** يسمح فقط بالملف المضغوط zip')}}</p>
                               </div>
                             </div>
                             @endif
