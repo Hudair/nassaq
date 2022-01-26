@@ -363,7 +363,7 @@ input[type="submit"]:hover {
     padding-top: 20px;
     font-size: 14px;
     color: #fff;
-    
+    display: none;
 }
 .support-bar-area .support-contact-info i {
     color: #25d06f;

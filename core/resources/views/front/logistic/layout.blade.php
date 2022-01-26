@@ -366,7 +366,7 @@
                 if ((data.errors)) {
                   $this.find(".err-email").html(data.errors.email[0]);
                 } else {
-                  toastr["success"]("You are subscribed successfully!");
+                  toastr["success"]("تم اشتراكك بنجاح!");
                   $this.trigger('reset');
                   $this.find(".err-email").html('');
                 }
